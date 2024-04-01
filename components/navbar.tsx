@@ -5,9 +5,11 @@ const Navbar = () => {
   return (
     <div className="px-10 py-8 flex justify-between">
       <div>
-        <p className="text-lg font-playfair">Sanjay M</p>
-        <p className="text-xs font-satoshim tracking-tight opacity-50 ">
-          Bengaluru, India
+        <p className="text-lg font-playfair">
+          Sanjay M{" "}
+          <span className="text-xs font-satoshim tracking-tight opacity-50">
+            Bengaluru, India
+          </span>
         </p>
       </div>
       {/* <div className="flex gap-4 items-center text-sm">
