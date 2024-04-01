@@ -14,7 +14,7 @@ const Home = () => {
           <span className="inline-block align-super text-base">(4)</span>{" "}
         </p>
         <div className="flex items-center justify-start text-4xl overflow-x-auto">
-          <div className="flex flex-shrink-0 m-5 gap-5">
+          <div className="flex flex-shrink-0 m-10 gap-5">
             <Card
               src="/images/parrot.jpeg"
               projectName="High Performant Chat Server"
