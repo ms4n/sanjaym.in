@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap");
+
+@font-face {
+  font-family: "Satoshi-Bold";
+  src: url("../public/fonts/Satoshi-Bold.otf");
+}
+@font-face {
+  font-family: "Satoshi-Light";
+  src: url("../public/fonts/Satoshi-Light.otf");
+}
+@font-face {
+  font-family: "Satoshi-Medium";
+  src: url("../public/fonts/Satoshi-Medium.otf");
+}
+@font-face {
+  font-family: "Satoshi-Regular";
+  src: url("../public/fonts/Satoshi-Regular.otf");
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

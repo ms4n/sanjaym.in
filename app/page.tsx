@@ -1,12 +1,18 @@
 "use client";
 
 import Card from "@/components/card";
+import Navbar from "@/components/navbar";
 
 const Home = () => {
   return (
     <div className="">
+      <Navbar />
+
       <div className="flex flex-col h-screen">
-        <p className="text-3xl mx-10 mt-10">Projects(4)</p>
+        <p className="text-4xl mx-10 mt-10 font-satoshim ">
+          projects
+          <span className="inline-block align-super text-base">(4)</span>{" "}
+        </p>
         <div className="flex items-center justify-start text-4xl overflow-x-auto">
           <div className="flex flex-shrink-0 m-5 gap-5">
             <Card
