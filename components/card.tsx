@@ -19,7 +19,7 @@ const Card: React.FC<CardProps> = ({
 }) => {
   const cardStyles: React.CSSProperties = {
     borderRadius: "30px",
-    width: "370px",
+    width: "270px",
     height: "auto",
     overflow: "hidden",
   };
@@ -38,8 +38,8 @@ const Card: React.FC<CardProps> = ({
         <Image
           src={src} // Use src prop for image source
           alt="project illustration"
-          width={350}
-          height={350}
+          width={250}
+          height={250}
           className=""
           style={imageStyles}
         />
