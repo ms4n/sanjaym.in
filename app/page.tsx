@@ -8,7 +8,7 @@ const Home = () => {
     <div className="">
       <Navbar />
 
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col h-screen font-satoshim ">
         <p className="text-4xl mx-10 mt-10 font-satoshim ">
           projects
           <span className="inline-block align-super text-base">(4)</span>{" "}
