@@ -44,12 +44,10 @@ const Card: React.FC<CardProps> = ({
           style={imageStyles}
         />
         <div className="font-geist">
-          <p className="text-base mx-2 mt-2 mb-1 font-medium">{projectName}</p>{" "}
-          {/* Use projectName prop */}
+          <p className="text-base mx-2 mt-2 mb-1 font-medium">{projectName}</p>
           <p className="text-xs mx-2 text-gray-400 leading-tight">
             {projectDescription}
           </p>
-          {/* Use projectDescription prop */}
         </div>
         <div className="flex gap-2 mt-3 mb-4 mx-2">
           {badges.map((badge, index) => (
@@ -59,16 +57,16 @@ const Card: React.FC<CardProps> = ({
           ))}
         </div>
         <hr className="mx-2" />
-        <div className="flex mb-2 mt-4 gap-4 px-1">
+        <div className="flex mb-2 mt-4 gap-4 px-2">
           <Button
             variant={"secondary"}
-            className="rounded-full text-xs h-9 m-0 py-0 grow border font-geist"
+            className="rounded-xl text-xs h-9 grow border font-geist"
           >
             Check it out live
           </Button>
           <Button
             size={"icon"}
-            className="rounded-full text-xs h-9 w-9 grow-0 flex items-center justify-center font-geist"
+            className="rounded-xl text-xs h-9 grow flex items-center justify-center font-geist"
           >
             <Github className="ml-[2px]" size={22} />
           </Button>
