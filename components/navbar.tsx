@@ -3,7 +3,7 @@ import { Mail } from "lucide-react";
 
 const Navbar = () => {
   return (
-    <div className="px-10 py-8 flex justify-between font-satoshim">
+    <div className="px-10 pt-8 flex justify-between font-satoshim">
       <div>
         <p className="text-lg font-playfair">Sanjay M</p>
         <p className="text-xs font-satoshim tracking-tight opacity-50 leading-none">

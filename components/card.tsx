@@ -44,7 +44,7 @@ const Card: React.FC<CardProps> = ({
           style={imageStyles}
         />
         <div className="font-geist">
-          <p className="text-base mx-2 mt-2 mb-1 ">{projectName}</p>{" "}
+          <p className="text-base mx-2 mt-2 mb-1 font-medium">{projectName}</p>{" "}
           {/* Use projectName prop */}
           <p className="text-xs mx-2 text-gray-400 leading-tight">
             {projectDescription}

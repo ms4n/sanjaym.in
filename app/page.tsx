@@ -9,7 +9,7 @@ const Home = () => {
       <Navbar />
 
       <div className="flex flex-col h-screen ">
-        <p className="text-4xl mx-10 mt-10 font-satoshim ">
+        <p className="text-4xl mx-10 mt-8 font-satoshim ">
           projects
           <span className="inline-block align-super text-base">(4)</span>{" "}
         </p>
