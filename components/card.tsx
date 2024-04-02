@@ -43,17 +43,17 @@ const Card: React.FC<CardProps> = ({
           className=""
           style={imageStyles}
         />
-        <div>
-          <p className="text-base mx-2 mt-2 mb-1">{projectName}</p>{" "}
+        <div className="font-geist">
+          <p className="text-base mx-2 mt-2 mb-1 ">{projectName}</p>{" "}
           {/* Use projectName prop */}
-          <p className="text-xs mx-2 text-gray-400">
+          <p className="text-xs mx-2 text-gray-400 leading-tight">
             {projectDescription}
-          </p>{" "}
+          </p>
           {/* Use projectDescription prop */}
         </div>
         <div className="flex gap-2 mt-3 mb-4 mx-2">
           {badges.map((badge, index) => (
-            <Badge key={index} variant="outline">
+            <Badge className="font-geist" key={index} variant="secondary">
               {badge}
             </Badge>
           ))}
@@ -62,13 +62,13 @@ const Card: React.FC<CardProps> = ({
         <div className="flex mb-2 mt-4 gap-4 px-1">
           <Button
             variant={"secondary"}
-            className="rounded-full text-xs h-9 m-0 py-0 grow border"
+            className="rounded-full text-xs h-9 m-0 py-0 grow border font-geist"
           >
             Check it out live
           </Button>
           <Button
             size={"icon"}
-            className="rounded-full text-xs h-9 w-9 grow-0 flex items-center justify-center"
+            className="rounded-full text-xs h-9 w-9 grow-0 flex items-center justify-center font-geist"
           >
             <Github className="ml-[2px]" size={22} />
           </Button>

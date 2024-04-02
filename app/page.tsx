@@ -8,13 +8,13 @@ const Home = () => {
     <div className="">
       <Navbar />
 
-      <div className="flex flex-col h-screen font-satoshim ">
+      <div className="flex flex-col h-screen ">
         <p className="text-4xl mx-10 mt-10 font-satoshim ">
           projects
           <span className="inline-block align-super text-base">(4)</span>{" "}
         </p>
         <div className="flex items-center justify-start text-4xl overflow-x-auto">
-          <div className="flex flex-shrink-0 m-10 gap-5">
+          <div className="flex flex-shrink-0 m-9 gap-5">
             <Card
               src="/images/parrot.jpeg"
               projectName="High Performant Chat Server"

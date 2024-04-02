@@ -25,6 +25,7 @@ const config = {
         satoshil: ["Satoshi-Light", "sans-serif"],
         satoshim: ["Satoshi-Medium", "sans-serif"],
         satoshir: ["Satoshi-Regular", "sans-serif"],
+        geist: ["Geist-Variable", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

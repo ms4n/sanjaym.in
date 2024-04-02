@@ -10,12 +10,12 @@ const Navbar = () => {
           Bengaluru, India
         </p>
       </div>
-      <div className="flex gap-4 items-center text-sm">
+      {/* <div className="flex gap-4 items-center text-sm">
         <p>Resume</p>
         <p className="h-6 w-6 bg-gray-800 flex justify-center items-center rounded-full">
           <Mail color="white" size={14} />
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };
