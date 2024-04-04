@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     description: "Sanjay M's Developer Portfolio",
     url: "https://sanjaym.vercel.app",
     siteName: "Sanjay M's Portfolio",
-    images: [
-      {
-        url: "https://chronark.com/og.png",
-        width: 1920,
-        height: 1080,
-      },
-    ],
+    // images: [
+    //   {
+    //     url: "https://chronark.com/og.png",
+    //     width: 1920,
+    //     height: 1080,
+    //   },
+    // ],
     locale: "en-US",
     type: "website",
   },
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Sanjay M's Portfolio",
+    title: "Sanjay M",
     card: "summary_large_image",
   },
   icons: {
