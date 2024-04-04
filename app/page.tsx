@@ -31,7 +31,7 @@ export default function Home() {
           <h2 className="text-sm font-satoshim text-zinc-400 ">
             Hi,{" "}
             <span className="text-zinc-200">
-              I'm Sanjay, a backend-focused fullstack developer{" "}
+              I&apos;m Sanjay, a backend-focused fullstack developer{" "}
             </span>{" "}
             with a flair for design. I partner with ambitious teams to bring
             their visions to life, unbounded by frameworks or languages.
