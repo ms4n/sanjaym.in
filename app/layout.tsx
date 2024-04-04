@@ -8,12 +8,12 @@ export const metadata: Metadata = {
     default: "Sanjay M",
     template: "%s | Sanjay M",
   },
-  description: "Co-founder of unkey.dev and founder of planetfall.io",
+  description: "Sanjay M's Developer Portfolio",
   openGraph: {
-    title: "chronark.com",
-    description: "Co-founder of unkey.dev and founder of planetfall.io",
-    url: "https://chronark.com",
-    siteName: "chronark.com",
+    title: "Sanjay M's Portfolio",
+    description: "Sanjay M's Developer Portfolio",
+    url: "https://sanjaym.vercel.app",
+    siteName: "Sanjay M's Portfolio",
     images: [
       {
         url: "https://chronark.com/og.png",
