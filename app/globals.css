@@ -103,5 +103,5 @@
 .border-raised {
   --tw-border-opacity: 0.08;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
-  border-width: 1px 1px 2px;
+  border-width: 1px 1px 1px ;
 }

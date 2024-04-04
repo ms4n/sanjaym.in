@@ -11,6 +11,7 @@ interface CardProps {
   badges: string[]; // Array of badge text
 }
 
+//perfect rounded corner rule = outer-radius - inner-radius = padding
 const Card: React.FC<CardProps> = ({
   src,
   projectName,
@@ -18,25 +19,25 @@ const Card: React.FC<CardProps> = ({
   badges,
 }) => {
   const cardStyles: React.CSSProperties = {
-    borderRadius: "30px",
+    borderRadius: "20px", //outer-radius
     width: "270px",
     height: "auto",
     overflow: "hidden",
   };
 
   const imageDivStyles: React.CSSProperties = {
-    padding: "10px",
+    padding: "10px", // padding
   };
 
   const imageStyles: React.CSSProperties = {
-    borderRadius: "20px",
+    borderRadius: "10px", //inner-radius
   };
 
   return (
     <div className="border-raised" style={cardStyles}>
       <div style={imageDivStyles}>
         <Image
-          src={src} // Use src prop for image source
+          src={src}
           alt="project illustration"
           width={250}
           height={250}
@@ -60,13 +61,13 @@ const Card: React.FC<CardProps> = ({
         <div className="flex mb-2 mt-4 gap-4 px-2">
           <Button
             variant={"secondary"}
-            className="rounded-xl text-xs h-9 grow border font-geist"
+            className="rounded-lg text-xs h-9 grow border font-geist"
           >
             Check it out live
           </Button>
           <Button
             size={"icon"}
-            className="rounded-xl text-xs h-9 grow flex items-center justify-center font-geist"
+            className="rounded-lg text-xs h-9 grow flex items-center justify-center font-geist"
           >
             <Github className="ml-[2px]" size={22} />
           </Button>
