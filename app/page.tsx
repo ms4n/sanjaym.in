@@ -52,7 +52,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="block flex gap-2 items-center justify-center backdrop-blur-sm h-full bg-white/10 p-2 border border-gray-100/20 rounded-full shadow transition">
+          <div className="block flex gap-3 items-center justify-center backdrop-blur-sm bg-white/10 p-2 border border-gray-100/20 rounded-full shadow">
             {isColorSelectOpen ? (
               Object.keys(colorGradients).map((color, index) => (
                 <button
@@ -84,7 +84,7 @@ export default function Home() {
             their visions to life, unbounded by frameworks or languages.
           </h2>
 
-          <div className="flex items-center gap-4 mt-8">
+          <div className="flex items-center gap-4 mt-5">
             <Image
               className=" rounded-full"
               src={"/images/sanjay_m.png"}
@@ -112,7 +112,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 mb-10">
+        <div className="flex flex-col gap-4 mb-2">
           <h1 className="text-zinc-200 text-base font-satoshim">Projects</h1>
 
           <Card />
