@@ -8,6 +8,7 @@ import { useState } from "react";
 import { SquareArrowOutUpRight, Copy } from "lucide-react";
 
 import Particles from "./components/particles";
+import Card from "./components/card";
 
 const links = [
   { text: "github", href: "www.google.com" },
@@ -40,10 +41,10 @@ export default function Home() {
 
   return (
     <div
-      className={`flex flex-col main px-10 w-full h-full overflow-hidden bg-gradient-to-tl from-black ${gradient} to-black`}
+      className={`flex flex-col main px-10 w-full h-full justify-center overflow-hidden bg-gradient-to-tl from-black ${gradient} to-black`}
     >
       <div className="md:container mx-auto md:my-5">
-        <nav className="flex items-center justify-between pt-10 animate-fade-i">
+        <nav className="flex items-center justify-between animate-fade-i">
           <div>
             <p className="text-lg font-playfair text-zinc-200">Sanjay M</p>
             <p className="text-xs font-satoshim leading-none tracking-tight text-zinc-500">
@@ -51,22 +52,20 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="block flex items-center justify-center backdrop-blur-sm h-full bg-white/10 p-2 border border-gray-100/20 rounded-full shadow">
-            <button
-              onClick={handleColorSelector}
-              className={`w-5 h-5 border border-gray-100/20 rounded-full ${gradientColor}`}
-            ></button>
-
-            {isColorSelectOpen && (
-              <div className="absolute top-8 right-0 flex flex-wrap gap-2 p-2 bg-white/10 backdrop-blur-md border border-gray-100/20 rounded-full shadow">
-                {Object.keys(colorGradients).map((color, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleColorChange(color)}
-                    className={`w-5 h-5 border border-gray-100/20 rounded-full ${color}`}
-                  ></button>
-                ))}
-              </div>
+          <div className="block flex gap-2 items-center justify-center backdrop-blur-sm h-full bg-white/10 p-2 border border-gray-100/20 rounded-full shadow transition">
+            {isColorSelectOpen ? (
+              Object.keys(colorGradients).map((color, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleColorChange(color)}
+                  className={`w-5 h-5 border border-gray-100/20 rounded-full ${color}`}
+                ></button>
+              ))
+            ) : (
+              <button
+                onClick={handleColorSelector}
+                className={`w-5 h-5 border border-gray-100/20 rounded-full ${gradientColor}`}
+              ></button>
             )}
           </div>
         </nav>
@@ -116,20 +115,7 @@ export default function Home() {
         <div className="flex flex-col gap-4 mb-10">
           <h1 className="text-zinc-200 text-base font-satoshim">Projects</h1>
 
-          <div>
-            <a
-              href="#"
-              className="block backdrop-blur-sm bg-white/10 max-w-sm p-6 border border-gray-100/20 rounded-lg shadow "
-            >
-              <h5 className="mb-2 text-base font-satoshib tracking-tight text-gray-900 dark:text-white">
-                Noteworthy technology acquisitions 2021
-              </h5>
-              <p className="text-gray-700 font-satoshim text-sm tracking-tight leading-tight dark:text-gray-400">
-                Here are the biggest enterprise technology acquisitions of 2021
-                so far, in reverse chronological order.
-              </p>
-            </a>
-          </div>
+          <Card />
         </div>
       </div>
     </div>
