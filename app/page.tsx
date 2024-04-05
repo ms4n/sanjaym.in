@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+
+import { useState } from "react";
 
 import { SquareArrowOutUpRight, Copy } from "lucide-react";
 
@@ -7,19 +11,63 @@ import Particles from "./components/particles";
 
 const links = [
   { text: "github", href: "www.google.com" },
+  { text: "linkedin", href: "www.google.com" },
   { text: "resume", href: "www.google.com" },
 ];
 
 export default function Home() {
+  const [gradientColor, setGradientColor] = useState("bg-blue-600");
+  const [isColorSelectOpen, setIsColorSelectOpen] = useState(false);
+  const [gradient, setGradient] = useState("via-blue-600/20");
+
+  const colorGradients: { [key: string]: string } = {
+    "bg-red-600": "via-red-600/20",
+    "bg-green-600": "via-green-600/20",
+    "bg-orange-600": "via-orange-600/20",
+    "bg-teal-600": "via-teal-600/20",
+    "bg-blue-600": "via-blue-600/20",
+  };
+
+  const handleColorSelector = () => {
+    setIsColorSelectOpen(!isColorSelectOpen);
+  };
+
+  const handleColorChange = (color: string) => {
+    setGradientColor(color);
+    setGradient(colorGradients[color]);
+    setIsColorSelectOpen(false);
+  };
+
   return (
-    <div className="flex flex-col px-10 w-screen h-screen m-auto overflow-hidden bg-gradient-to-tl from-black via-blue-600/20 to-black">
+    <div
+      className={`flex flex-col main px-10 w-full h-full overflow-hidden bg-gradient-to-tl from-black ${gradient} to-black`}
+    >
       <div className="md:container mx-auto md:my-5">
-        <nav className="flex justify-between pt-10 animate-fade-i">
+        <nav className="flex items-center justify-between pt-10 animate-fade-i">
           <div>
             <p className="text-lg font-playfair text-zinc-200">Sanjay M</p>
             <p className="text-xs font-satoshim leading-none tracking-tight text-zinc-500">
               Bengaluru, India
             </p>
+          </div>
+
+          <div className="block flex items-center justify-center backdrop-blur-sm h-full bg-white/10 p-2 border border-gray-100/20 rounded-full shadow">
+            <button
+              onClick={handleColorSelector}
+              className={`w-5 h-5 border border-gray-100/20 rounded-full ${gradientColor}`}
+            ></button>
+
+            {isColorSelectOpen && (
+              <div className="absolute top-8 right-0 flex flex-wrap gap-2 p-2 bg-white/10 backdrop-blur-md border border-gray-100/20 rounded-full shadow">
+                {Object.keys(colorGradients).map((color, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleColorChange(color)}
+                    className={`w-5 h-5 border border-gray-100/20 rounded-full ${color}`}
+                  ></button>
+                ))}
+              </div>
+            )}
           </div>
         </nav>
         <Particles
@@ -47,7 +95,7 @@ export default function Home() {
             ></Image>
 
             <div className="flex flex-col gap-3 underline text-zinc-400 text-sm font-satoshim">
-              <div className="flex gap-5">
+              <div className="flex gap-4 ">
                 {links.map((link, index) => (
                   <Link
                     className="flex items-center gap-2"
@@ -65,8 +113,23 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex">
-          <h1 className="text-blue-300 text-base font-satoshim">Projects</h1>
+        <div className="flex flex-col gap-4 mb-10">
+          <h1 className="text-zinc-200 text-base font-satoshim">Projects</h1>
+
+          <div>
+            <a
+              href="#"
+              className="block backdrop-blur-sm bg-white/10 max-w-sm p-6 border border-gray-100/20 rounded-lg shadow "
+            >
+              <h5 className="mb-2 text-base font-satoshib tracking-tight text-gray-900 dark:text-white">
+                Noteworthy technology acquisitions 2021
+              </h5>
+              <p className="text-gray-700 font-satoshim text-sm tracking-tight leading-tight dark:text-gray-400">
+                Here are the biggest enterprise technology acquisitions of 2021
+                so far, in reverse chronological order.
+              </p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

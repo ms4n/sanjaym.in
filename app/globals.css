@@ -32,3 +32,8 @@
   font-family: "Geist-Variable";
   src: url("../public/fonts/GeistVF.ttf");
 }
+
+html,
+body {
+  height: 100%;
+}
