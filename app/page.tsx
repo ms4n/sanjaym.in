@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import { SquareArrowOutUpRight, Copy, CheckCheck } from "lucide-react";
 
@@ -57,11 +57,23 @@ export default function Home() {
     }
   };
 
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const scrollInterval = setInterval(() => {
+      if (scrollRef.current) {
+        scrollRef.current.scrollLeft -= 10; // Adjust the nudge distance
+      }
+    }, 1000);
+
+    return () => clearInterval(scrollInterval);
+  }, []);
+
   return (
     <div
       className={`flex flex-col main w-full h-full justify-center overflow-hidden bg-gradient-to-tl from-black ${gradient} to-black`}
     >
-      <div className="md:container mx-auto md:my-5 px-10">
+      <div className="md:container mx-auto px-10">
         <nav className="flex items-center justify-between animate-fade-i">
           <div>
             <p className="text-lg font-playfair text-zinc-200">Sanjay M</p>
@@ -141,11 +153,14 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <h1 className="text-zinc-200 text-base font-satoshim mb-4 px-10">
+        <h1 className="text-zinc-200 text-base font-satoshim mb-3 px-10">
           Projects
         </h1>
         <div className="flex flex-col gap-4 mb-2 overflow-x-auto scrollbar-hide">
-          <div className="flex gap-5 pl-10">
+          <div
+            ref={scrollRef}
+            className="flex gap-5 pl-10 scroll-nudge ease-in-out"
+          >
             <Card />
             <Card />
             <Card />

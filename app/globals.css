@@ -45,3 +45,17 @@ body {
 .scrollbar-hide {
   scrollbar-width: none;
 }
+
+.scroll-nudge {
+  animation: nudge 1s linear;
+}
+
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translateX(0); /* Start and end at original position */
+  }
+  50% {
+    transform: translateX(-20%); /* Nudge to the left by 5% */
+  }
+}
