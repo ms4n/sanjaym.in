@@ -5,7 +5,12 @@ import Image from "next/image";
 
 import { useState, useEffect, useRef } from "react";
 
-import { SquareArrowOutUpRight, Copy, CheckCheck } from "lucide-react";
+import {
+  SquareArrowOutUpRight,
+  Copy,
+  CheckCheck,
+  ArrowRight,
+} from "lucide-react";
 
 import Particles from "./components/particles";
 import Card from "./components/card";
@@ -153,8 +158,8 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <h1 className="text-zinc-200 text-base font-satoshim mb-3 px-10">
-          Projects
+        <h1 className="flex items-center justify-between text-zinc-200 text-base font-satoshim mb-3 px-10">
+          Projects <ArrowRight className="mx-1 mt-1" size={16} />
         </h1>
         <div className="flex flex-col gap-4 mb-2 overflow-x-auto scrollbar-hide">
           <div
