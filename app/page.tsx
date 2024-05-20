@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import { useState } from "react";
 
-import { SquareArrowOutUpRight, Copy } from "lucide-react";
+import { SquareArrowOutUpRight, Copy, CheckCheck } from "lucide-react";
 
 import Particles from "./components/particles";
 import Card from "./components/card";
@@ -17,6 +17,8 @@ const links = [
 ];
 
 export default function Home() {
+  const [copyStatus, setCopyStatus] = useState(false);
+
   const [gradientColor, setGradientColor] = useState("bg-blue-600");
   const [isColorSelectOpen, setIsColorSelectOpen] = useState(false);
   const [gradient, setGradient] = useState("via-blue-600/20");
@@ -39,11 +41,27 @@ export default function Home() {
     setIsColorSelectOpen(false);
   };
 
+  const onCopyEmail = () => {
+    setCopyStatus(true);
+    setTimeout(() => setCopyStatus(false), 2000);
+  };
+
+  const handleCopyClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const text = (e.currentTarget.textContent as string).trim();
+    try {
+      await navigator.clipboard.writeText(text);
+      onCopyEmail();
+    } catch (err) {
+      console.error("Failed to copy text: ", err);
+    }
+  };
+
   return (
     <div
-      className={`flex flex-col main px-10 w-full h-full justify-center overflow-hidden bg-gradient-to-tl from-black ${gradient} to-black`}
+      className={`flex flex-col main w-full h-full justify-center overflow-hidden bg-gradient-to-tl from-black ${gradient} to-black`}
     >
-      <div className="md:container mx-auto md:my-5">
+      <div className="md:container mx-auto md:my-5 px-10">
         <nav className="flex items-center justify-between animate-fade-i">
           <div>
             <p className="text-lg font-playfair text-zinc-200">Sanjay M</p>
@@ -58,7 +76,7 @@ export default function Home() {
                 <button
                   key={index}
                   onClick={() => handleColorChange(color)}
-                  className={`w-5 h-5 border border-gray-100/20 rounded-full ${color}`}
+                  className={`w-6 h-6 border border-gray-100/20 rounded-full ${color}`}
                 ></button>
               ))
             ) : (
@@ -81,7 +99,7 @@ export default function Home() {
               I&apos;m Sanjay, a backend-focused fullstack developer{" "}
             </span>{" "}
             with a flair for design. I partner with ambitious teams to bring
-            their visions to life, unbounded by frameworks or languages.
+            their visions to life, unbounded by frameworks or languages.{" "}
           </h2>
 
           <div className="flex items-center gap-4 mt-5">
@@ -93,8 +111,8 @@ export default function Home() {
               alt="sanjay-m circle image"
             ></Image>
 
-            <div className="flex flex-col gap-3 underline text-zinc-400 text-sm font-satoshim">
-              <div className="flex gap-4 ">
+            <div className="flex flex-col gap-3 text-zinc-400 text-sm font-satoshim">
+              <div className="flex gap-4 underline">
                 {links.map((link, index) => (
                   <Link
                     className="flex items-center gap-2"
@@ -105,17 +123,34 @@ export default function Home() {
                   </Link>
                 ))}
               </div>
-              <a className="flex items-center gap-2">
-                work.sanjaym@gmail.com <Copy size={14} />
-              </a>
+
+              {copyStatus ? (
+                <p className="flex no-underline items-center gap-2">
+                  email copied! <CheckCheck size={14} />
+                </p>
+              ) : (
+                <a
+                  onClick={handleCopyClick}
+                  className="flex items-center gap-2 underline cursor-pointer"
+                >
+                  work.sanjaym@gmail.com <Copy size={14} />
+                </a>
+              )}
             </div>
           </div>
         </div>
-
-        <div className="flex flex-col gap-4 mb-2">
-          <h1 className="text-zinc-200 text-base font-satoshim">Projects</h1>
-
-          <Card />
+      </div>
+      <div>
+        <h1 className="text-zinc-200 text-base font-satoshim mb-4 px-10">
+          Projects
+        </h1>
+        <div className="flex flex-col gap-4 mb-2 overflow-x-auto scrollbar-hide">
+          <div className="flex gap-5 pl-10">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+          </div>
         </div>
       </div>
     </div>
