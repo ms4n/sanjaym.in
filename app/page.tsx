@@ -76,10 +76,15 @@ export default function Home() {
 
   return (
     <div
-      className={`flex flex-col w-full h-full justify-center overflow-hidden bg-gradient-to-tl from-black ${gradient} to-black`}
+      className={`flex flex-col w-full h-full justify-center w-full h-full overflow-hidden bg-gradient-to-tl from-black ${gradient} to-black`}
     >
-      <div className="md:flex md:container md:mx-auto">
-        <div className="md:container mx-auto px-10">
+      <Particles
+        className="absolute inset-0 -z-10 animate-fade-in"
+        quantity={100}
+      />
+
+      <div className="md:flex md:container md:mx-auto md:m-24">
+        <div className="px-10">
           <nav className="flex items-center justify-between animate-fade-i">
             <div>
               <p className="text-lg font-playfair text-zinc-200">Sanjay M</p>
@@ -105,10 +110,6 @@ export default function Home() {
               )}
             </div>
           </nav>
-          <Particles
-            className="absolute inset-0 -z-10 animate-fade-in"
-            quantity={100}
-          />
 
           <div className="my-10 animate-fade-inn">
             <h2 className="text-sm font-satoshim text-zinc-400 ">
@@ -159,20 +160,23 @@ export default function Home() {
           </div>
         </div>
 
-        <div>
-          <h1 className="flex items-center justify-between text-zinc-200 text-base font-satoshim mb-3 px-10">
-            Projects <ArrowRight className="mx-1 mt-1" size={16} />
+        <div className="flex flex-col w-auto md:max-h-[calc(100vh-40px)] overflow-hidden">
+          <h1 className="flex items-center px-10 md:px-0 text-zinc-200 text-base font-satoshim mb-3">
+            Projects <ArrowRight className="mt-1" size={16} />
           </h1>
-          <div className="flex flex-col gap-4 mb-2 overflow-x-auto scrollbar-hide">
-            <div
-              ref={scrollRef}
-              className="flex md:flex-col gap-5 pl-10 scroll-nudge ease-in-out"
-            >
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-            </div>
+          <div
+            ref={scrollRef}
+            className="flex flex-row md:flex-col overflow-x-auto md:overflow-y-auto gap-5 px-10 md:px-0 scroll-nudge ease-in-out pb-10 scrollbar-hide"
+          >
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
           </div>
         </div>
       </div>
