@@ -69,7 +69,7 @@ export default function Home() {
       if (scrollRef.current) {
         scrollRef.current.scrollLeft -= 10; // Adjust the nudge distance
       }
-    }, 1000);
+    }, 2000);
 
     return () => clearInterval(scrollInterval);
   }, []);

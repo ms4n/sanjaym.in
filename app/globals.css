@@ -47,7 +47,7 @@ body {
 }
 
 .scroll-nudge {
-  animation: nudge 3s linear;
+  animation: nudge 2s linear;
 }
 
 @keyframes nudge {
