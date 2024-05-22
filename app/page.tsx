@@ -135,7 +135,7 @@ export default function Home() {
                 </button>
                 <div
                   ref={techStackRef}
-                  className="text-zinc-200 overflow-hidden transition-all duration-300 ease-in-out"
+                  className="overflow-hidden transition-all duration-300 ease-in-out"
                   style={{
                     maxHeight: showTechStack
                       ? `${techStackRef.current?.scrollHeight}px` // Optional chaining for safety
@@ -144,9 +144,11 @@ export default function Home() {
                   }}
                 >
                   <div className="mt-2">
-                    Python with Django/FastAPI and Node.js with
-                    TypeScript/Express.js/React/Next.js, with a growing interest
-                    in Golang.
+                    <span className="text-zinc-200">
+                      Python with Django/FastAPI and Node.js with
+                      TypeScript/Express.js/React/Next.js,
+                    </span>{" "}
+                    with a growing interest in Golang.
                   </div>
                 </div>
               </div>
@@ -155,7 +157,7 @@ export default function Home() {
                 stack for building is{" "}
                 <span className="text-zinc-200">
                   Python with Django/FastAPI and Node.js with
-                  TypeScript/Express.js/React/Next.js,
+                  TypeScript/Express.js/Next.js,
                 </span>{" "}
                 with a growing interest in Golang.
               </p>
