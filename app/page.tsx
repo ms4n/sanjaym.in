@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 
 import {
   SquareArrowOutUpRight,
@@ -65,7 +65,7 @@ export default function Home() {
 
   return (
     <div
-      className={`flex flex-col main h-full w-full justify-center md:pt-32 overflow-hidden bg-gradient-to-tl from-black ${gradient} to-black`}
+      className={`flex flex-col main h-screen w-full justify-center md:pt-32 overflow-hidden bg-gradient-to-tl from-black ${gradient} to-black`}
     >
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
