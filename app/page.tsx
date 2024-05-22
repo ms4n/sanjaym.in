@@ -76,15 +76,15 @@ export default function Home() {
 
   return (
     <div
-      className={`flex flex-col w-full h-full justify-center w-full h-full overflow-hidden bg-gradient-to-tl from-black ${gradient} to-black`}
+      className={`flex flex-col h-full justify-center md:pt-32 overflow-hidden bg-gradient-to-tl from-black ${gradient} to-black`}
     >
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={100}
       />
 
-      <div className="md:flex md:container md:mx-auto md:m-24">
-        <div className="px-10">
+      <div className="md:flex justify-around md:container md:mx-auto">
+        <div className="px-10 max-w-3xl">
           <nav className="flex items-center justify-between animate-fade-i">
             <div>
               <p className="text-lg font-playfair text-zinc-200">Sanjay M</p>
@@ -111,7 +111,7 @@ export default function Home() {
             </div>
           </nav>
 
-          <div className="my-10 animate-fade-inn">
+          <div className="my-10 md:max-w-lg">
             <h2 className="text-sm font-satoshim text-zinc-400 ">
               Hi,{" "}
               <span className="text-zinc-200">
@@ -160,17 +160,14 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col w-auto md:max-h-[calc(100vh-40px)] overflow-hidden">
-          <h1 className="flex items-center px-10 md:px-0 text-zinc-200 text-base font-satoshim mb-3">
-            Projects <ArrowRight className="mt-1" size={16} />
+        <div className="flex flex-col md:max-h-[calc(100vh-40px)] overflow-hidden md:mr-10">
+          <h1 className="px-10 md:px-0 text-zinc-200 text-base font-satoshim mb-3">
+            Projects
           </h1>
           <div
             ref={scrollRef}
-            className="flex flex-row md:flex-col overflow-x-auto md:overflow-y-auto gap-5 px-10 md:px-0 scroll-nudge ease-in-out pb-10 scrollbar-hide"
+            className="flex flex-row md:flex-col overflow-x-auto md:overflow-y-auto gap-5 px-10 md:mb-10 md:px-0 scroll-nudge ease-in-out pb-10 scrollbar-hide"
           >
-            <Card />
-            <Card />
-            <Card />
             <Card />
             <Card />
             <Card />
