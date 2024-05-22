@@ -10,6 +10,7 @@ import {
   Copy,
   CheckCheck,
   ArrowRight,
+  ArrowDown,
 } from "lucide-react";
 
 import Particles from "./components/particles";
@@ -62,21 +63,9 @@ export default function Home() {
     }
   };
 
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const scrollInterval = setInterval(() => {
-      if (scrollRef.current) {
-        scrollRef.current.scrollLeft -= 10; // Adjust the nudge distance
-      }
-    }, 2000);
-
-    return () => clearInterval(scrollInterval);
-  }, []);
-
   return (
     <div
-      className={`flex flex-col h-full justify-center md:pt-32 overflow-hidden bg-gradient-to-tl from-black ${gradient} to-black`}
+      className={`flex flex-col main h-full w-full justify-center md:pt-32 overflow-hidden bg-gradient-to-tl from-black ${gradient} to-black`}
     >
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
@@ -161,15 +150,12 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col md:max-h-[calc(100vh-40px)] overflow-hidden md:mr-10">
-          <h1 className="px-10 md:px-0 text-zinc-200 text-base font-satoshim mb-3">
-            Projects
+          <h1 className="flex justify-between px-10 md:px-0 text-zinc-200 text-base font-satoshim mb-3">
+            Projects{" "}
+            <ArrowRight className="mx-1 mt-2 block md:hidden" size={16} />
+            {/* <ArrowDown className="mx-1 mt-2 hidden md:block" size={16} /> */}
           </h1>
-          <div
-            ref={scrollRef}
-            className="flex flex-row md:flex-col overflow-x-auto md:overflow-y-auto gap-5 px-10 md:mb-10 md:px-0 scroll-nudge ease-in-out pb-10 scrollbar-hide"
-          >
-            <Card />
-            <Card />
+          <div className="flex flex-row md:flex-col overflow-x-auto md:overflow-y-auto gap-5 px-10 md:px-0 md:pb-10 md:mb-10 scrollbar-hide">
             <Card />
             <Card />
             <Card />
