@@ -101,13 +101,22 @@ export default function Home() {
           </nav>
 
           <div className="my-10 md:max-w-lg">
-            <h2 className="text-sm font-satoshim text-zinc-400 ">
+            <h2 className="text-sm font-satoshim text-zinc-400">
               Hi,{" "}
               <span className="text-zinc-200">
                 I&apos;m Sanjay, a backend-focused fullstack developer{" "}
               </span>{" "}
               with a flair for design. I partner with ambitious teams to bring
-              their visions to life, unbounded by frameworks or languages.{" "}
+              their visions to life.
+              <p className="mt-4">
+                Although I&apos;m unbounded by frameworks or languages, my go-to
+                stack for building is{" "}
+                <span className="text-zinc-200">
+                  Python with Django/FastAPI and Node.js with
+                  TypeScript/Express.js/React/Next.js,
+                </span>{" "}
+                with a growing interest in Golang.
+              </p>
             </h2>
 
             <div className="flex items-center gap-4 mt-5">

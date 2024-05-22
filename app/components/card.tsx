@@ -15,7 +15,7 @@ const technologies = [
 
 const Card = () => {
   return (
-    <div className="block backdrop-blur-sm bg-white/10 max-w-80 md:max-w-xl p-6 border border-gray-100/20 rounded-lg shadow">
+    <div className="block backdrop-blur-sm bg-white/10 max-w-80 md:max-w-lg p-6 border border-gray-100/20 rounded-lg shadow">
       <h5 className="mb-2 text-base font-satoshib tracking-tight text-gray-900 dark:text-white">
         whatnot
       </h5>
