@@ -85,9 +85,27 @@ export default function Home() {
     };
   }, []);
 
+  const cardProps = {
+    title: "whatnot",
+    technologies: [
+      "next.js",
+      "express.js",
+      "supabase",
+      "aws",
+      "whatsapp",
+      "facebook",
+      "google apis",
+    ],
+    description:
+      "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order. Here are the biggest enterprise technology acquisitions of 2021 so far.",
+    liveLink: "https://www.google.com",
+    sourceLink: "https://www.github.com",
+  };
+
   return (
     <div
-      className={`flex flex-col main h-full w-full justify-center md:pt-32 overflow-hidden bg-gradient-to-tl from-black ${gradient} to-black`}
+      //add mt-32 when the no. of projects > 4
+      className={`flex flex-col main h-full w-full justify-center overflow-hidden bg-gradient-to-tl from-black ${gradient} to-black`}
     >
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
@@ -220,7 +238,7 @@ export default function Home() {
                 </div>
 
                 {copyStatus ? (
-                  <p className="flex no-underline items-center gap-2">
+                  <p className="flex no-underline items-center gap-2 text-green-500">
                     email copied! <CheckCheck size={14} />
                   </p>
                 ) : (
@@ -243,10 +261,9 @@ export default function Home() {
             {/* <ArrowDown className="mx-1 mt-2 hidden md:block" size={16} /> */}
           </h1>
           <div className="flex flex-row md:flex-col overflow-x-auto md:overflow-y-auto gap-5 px-10 md:px-0 md:pb-10 md:mb-10 scrollbar-hide">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            <Card {...cardProps} />
+            <Card {...cardProps} />
+            <Card {...cardProps} />
           </div>
         </div>
       </div>
