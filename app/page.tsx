@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import {
   SquareArrowOutUpRight,
@@ -24,6 +24,7 @@ const links = [
 ];
 
 export default function Home() {
+  const colorSelectorRef = useRef<HTMLDivElement>(null);
   const techStackRef = useRef<HTMLDivElement>(null);
 
   const [showTechStack, setShowTechStack] = useState(false);
@@ -67,6 +68,23 @@ export default function Home() {
     }
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        colorSelectorRef.current &&
+        !colorSelectorRef.current.contains(event.target as Node)
+      ) {
+        setIsColorSelectOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <div
       className={`flex flex-col main h-full w-full justify-center md:pt-32 overflow-hidden bg-gradient-to-tl from-black ${gradient} to-black`}
@@ -88,15 +106,20 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="block flex gap-3 items-center justify-center backdrop-blur-sm bg-white/10 p-2 border border-gray-100/20 rounded-full shadow">
+            <div
+              ref={colorSelectorRef}
+              className="block flex gap-3 items-center justify-center backdrop-blur-sm bg-white/10 p-2 border border-gray-100/20 rounded-full shadow"
+            >
               {isColorSelectOpen ? (
-                Object.keys(colorGradients).map((color, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleColorChange(color)}
-                    className={`w-6 h-6 border border-gray-100/20 rounded-full ${color}`}
-                  ></button>
-                ))
+                <div className="flex gap-3">
+                  {Object.keys(colorGradients).map((color, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handleColorChange(color)}
+                      className={`w-6 h-6 border border-gray-100/20 rounded-full ${color}`}
+                    ></button>
+                  ))}
+                </div>
               ) : (
                 <button
                   onClick={handleColorSelector}
@@ -138,7 +161,7 @@ export default function Home() {
                   className="overflow-hidden transition-all duration-300 ease-in-out"
                   style={{
                     maxHeight: showTechStack
-                      ? `${techStackRef.current?.scrollHeight}px` // Optional chaining for safety
+                      ? `${techStackRef.current?.scrollHeight}px`
                       : "0",
                     opacity: showTechStack ? 1 : 0,
                   }}
