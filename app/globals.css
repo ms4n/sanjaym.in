@@ -46,16 +46,24 @@ body {
   scrollbar-width: none;
 }
 
-.scroll-nudge {
-  animation: nudge 2s linear;
+@keyframes slideIn {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
 }
 
-@keyframes nudge {
-  0%,
-  100% {
-    transform: translateX(0); /* Start and end at original position */
+@keyframes slideOut {
+  from {
+    transform: scaleY(1);
+    opacity: 1;
   }
-  50% {
-    transform: translateX(-20%); /* Nudge to the left by 5% */
+  to {
+    transform: scaleY(0);
+    opacity: 0;
   }
 }
