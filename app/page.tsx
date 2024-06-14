@@ -19,7 +19,7 @@ import Card from "./components/card";
 
 const links = [
   { text: "github", href: "https://github.com/ms4n" },
-  { text: "linkedin", href: "www.google.com" },
+  { text: "linkedin", href: "https://www.linkedin.com/in/sanjay-m1/" },
   { text: "resume", href: "www.google.com" },
 ];
 

@@ -19,7 +19,7 @@ const Card: React.FC<CardProps> = ({
   sourceLink,
 }) => {
   return (
-    <div className="block backdrop-blur-sm bg-white/10 max-w-80 md:max-w-lg p-6 ring-1 ring-inset ring-gray-500/10 shadow-inner rounded-lg shadow">
+    <div className="block backdrop-blur-sm bg-white/10 max-w-80 md:max-w-lg p-6 ring-1 ring-inset ring-gray-500/10 shadow-inner rounded-lg">
       <h5 className="mb-2 text-base md:text-lg font-satoshib tracking-tight text-gray-900 dark:text-white">
         {title}
       </h5>
