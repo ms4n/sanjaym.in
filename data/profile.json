@@ -1,0 +1,11 @@
+{
+  "name": "Sanjay M",
+  "location": "Bengaluru, India",
+  "image": "/images/sanjay_m.png",
+  "email": "work.sanjaym@gmail.com",
+  "links": [
+    { "text": "github", "href": "https://github.com/ms4n" },
+    { "text": "linkedin", "href": "https://www.linkedin.com/in/sanjay-m1/" },
+    { "text": "resume", "href": "https://www.google.com/" }
+  ]
+}

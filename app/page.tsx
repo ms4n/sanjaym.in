@@ -14,14 +14,13 @@ import {
   ArrowDown,
 } from "lucide-react";
 
+import profileData from "@/data/profile.json";
+import projectsData from "@/data/projects.json";
+
 import Particles from "./components/particles";
 import Card from "./components/card";
 
-const links = [
-  { text: "github", href: "https://github.com/ms4n" },
-  { text: "linkedin", href: "https://www.linkedin.com/in/sanjay-m1/" },
-  { text: "resume", href: "www.google.com" },
-];
+const links = profileData.links;
 
 export default function Home() {
   const colorSelectorRef = useRef<HTMLDivElement>(null);
@@ -104,8 +103,10 @@ export default function Home() {
 
   return (
     <div
-      //add mt-32 when the no. of projects > 4
-      className={`flex flex-col main h-full w-full justify-center overflow-hidden bg-gradient-to-tl from-black ${gradient} to-black`}
+      //add md:pt-32 when the no. of projects > 4
+      className={`flex flex-col main ${
+        projectsData.length > 4 ? "md:pt-32" : "md:pt-0"
+      } h-full w-full justify-center overflow-hidden bg-gradient-to-tl from-black ${gradient} to-black`}
     >
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
@@ -207,20 +208,20 @@ export default function Home() {
             <div className="flex items-center gap-4 my-6">
               <Image
                 className="rounded-full block md:hidden"
-                src="/images/sanjay_m.png"
+                src={profileData.image}
                 width={60}
                 height={60}
                 quality={100}
-                alt="sanjay-m circle image"
+                alt="sanjay m circle image"
               />
 
               <Image
                 className="rounded-full hidden md:block"
-                src="/images/sanjay_m.png"
+                src={profileData.image}
                 width={80}
                 height={80}
                 quality={100}
-                alt="sanjay-m circle image"
+                alt="sanjay m circle image"
               />
 
               <div className="flex flex-col gap-3 text-sm md:text-base font-satoshim text-zinc-400 font-satoshim">
@@ -246,7 +247,7 @@ export default function Home() {
                     onClick={handleCopyClick}
                     className="flex items-center gap-2 underline cursor-pointer"
                   >
-                    work.sanjaym@gmail.com <Copy size={14} />
+                    {profileData.email} <Copy size={14} />
                   </a>
                 )}
               </div>
@@ -255,15 +256,21 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col md:max-h-[calc(100vh-40px)] overflow-hidden md:mr-10">
-          <h1 className="flex justify-between px-10 md:px-0 text-zinc-200 text-base font-satoshim mb-3">
-            Projects
+          <h1 className="flex justify-between items-center px-10 md:px-0 text-zinc-200 text-base font-satoshim mb-3">
+            <span className="flex items-center">
+              Projects{" "}
+              <span className="ml-1 text-sm text-zinc-400">
+                ({projectsData.length})
+              </span>
+            </span>
             <ArrowRight className="mx-1 mt-2 block md:hidden" size={16} />
-            {/* <ArrowDown className="mx-1 mt-2 hidden md:block" size={16} /> */}
+            <ArrowDown className="mx-1 mt-2 hidden md:block" size={16} />
           </h1>
+
           <div className="flex flex-row md:flex-col overflow-x-auto md:overflow-y-auto gap-5 px-10 md:px-0 md:pb-10 md:mb-10 scrollbar-hide">
-            <Card {...cardProps} />
-            <Card {...cardProps} />
-            <Card {...cardProps} />
+            {projectsData.map((project, index) => (
+              <Card key={index} {...project} />
+            ))}
           </div>
         </div>
       </div>
